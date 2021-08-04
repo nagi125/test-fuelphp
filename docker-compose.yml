@@ -21,6 +21,7 @@ services:
     environment:
       LANG: 'ja_JP.UTF-8'
       TZ: 'Asia/Tokyo'
+      FUEL_ENV: 'development'
     volumes:
       - .:/app
     expose:
@@ -36,7 +37,7 @@ services:
       TZ: 'Asia/Tokyo'
       POSTGRES_USER: 'docker'
       POSTGRES_PASSWORD: 'docker'
-      POSTGRES_DB: 'laravel_development'
+      POSTGRES_DB: 'fuel_development'
     volumes:
       - database:/var/lib/postgresql/data
       - ./.docker/db/sql:/docker-entrypoint-initdb.d
