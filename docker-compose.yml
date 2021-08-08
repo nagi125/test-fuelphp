@@ -31,18 +31,21 @@ services:
       - db
 
   db:
-    image: postgres:11-alpine
+    image: mysql:5.7
     container_name: db
     environment:
       TZ: 'Asia/Tokyo'
-      POSTGRES_USER: 'docker'
-      POSTGRES_PASSWORD: 'docker'
-      POSTGRES_DB: 'fuel_development'
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fuel_development
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
-      - database:/var/lib/postgresql/data
-      - ./.docker/db/sql:/docker-entrypoint-initdb.d
+      - database:/var/lib/mysql
+      - ./.docker/db/conf/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/db/sql:/docker-entrypoint-initdb.d
     ports:
-      - 5432:5432
+      - 3306:3306
 
   mail:
     image: schickling/mailcatcher
