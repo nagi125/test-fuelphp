@@ -1,4 +1,9 @@
 <?php
+use Fuel\Core\Controller_Template;
+
+/**
+ * Class Controller_Book
+ */
 class Controller_Book extends Controller_Template
 {
 
