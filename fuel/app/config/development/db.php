@@ -21,12 +21,15 @@
 
 return [
 	'default' => [
+        'type' => 'pdo',
 		'connection' => [
-			'dsn'      => 'pgsql:host=localhost;dbname=fuel_development',
+			'dsn'      => 'mysql:host=db;dbname=fuel_development',
 			'username' => 'docker',
 			'password' => 'docker',
 		],
-        'charset'	 => NULL,
-        'identifier' => "",
+        'identifier'     => '`',
+        'table_prefix'   => '',
+        'charset'        => 'utf8',
+        'enable_cache'   => true,
     ],
 ];
