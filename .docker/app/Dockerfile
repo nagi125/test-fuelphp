@@ -15,7 +15,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
 # add extention
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp --with-xpm && \
     docker-php-ext-install -j$(nproc) gd && \
-    docker-php-ext-install mbstring pdo pdo_pgsql json
+    docker-php-ext-install mbstring pdo pdo_mysql json
 
 # php.conf php-fpm.conf
 COPY conf/php.ini /usr/local/etc/php/php.ini
