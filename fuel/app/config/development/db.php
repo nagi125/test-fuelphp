@@ -19,12 +19,14 @@
  *
  */
 
-return array(
-	'default' => array(
-		'connection' => array(
-			'dsn'      => 'mysql:host=localhost;dbname=fuel_dev',
-			'username' => 'root',
-			'password' => 'root',
-		),
-	),
-);
+return [
+	'default' => [
+		'connection' => [
+			'dsn'      => 'pgsql:host=localhost;dbname=fuel_development',
+			'username' => 'docker',
+			'password' => 'docker',
+		],
+        'charset'	 => NULL,
+        'identifier' => "",
+    ],
+];
