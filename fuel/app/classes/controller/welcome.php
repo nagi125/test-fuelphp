@@ -1,14 +1,7 @@
 <?php
-/**
- * Fuel is a fast, lightweight, community driven PHP 5.4+ framework.
- *
- * @package    Fuel
- * @version    1.8.2
- * @author     Fuel Development Team
- * @license    MIT License
- * @copyright  2010 - 2019 Fuel Development Team
- * @link       https://fuelphp.com
- */
+use Fuel\Core\Controller;
+use Fuel\Core\Response;
+use Parser\View_Twig;
 
 /**
  * The Welcome Controller.
@@ -27,9 +20,14 @@ class Controller_Welcome extends Controller
 	 * @access  public
 	 * @return  Response
 	 */
-	public function action_index()
+	public function action_index(): Response
 	{
-		return Response::forge(View::forge('welcome/index'));
+	    $data = [
+	        'hoge' => 'test1',
+            'fuga' => 'test2',
+        ];
+
+		return Response::forge(View_Twig::forge('welcome/index', $data));
 	}
 
 	/**

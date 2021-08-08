@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>FuelPHP Framework</title>
-	<?php echo Asset::css('bootstrap.css'); ?>
+	{{ asset_css('bootstrap.min.css') }}
 	<style>
 		#logo{
 			display: block;
@@ -40,6 +40,7 @@
 			<h1>Welcome!</h1>
 			<p>You have successfully installed the FuelPHP Framework.</p>
 			<p><a class="btn btn-primary btn-lg" href="https://docs.fuelphp.com">Read the Docs</a></p>
+			{{ hoge }} {{ fuga }}
 		</div>
 		<div class="row">
 			<div class="col-md-4">
