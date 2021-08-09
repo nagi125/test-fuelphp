@@ -17,6 +17,8 @@ class Controller_Book extends Controller_Template
 
 	public function action_view($id = null)
 	{
+	    \Fuel\Core\Debug::dump($this->params());exit;
+
 		is_null($id) and Response::redirect('book');
 
 		if ( ! $data['book'] = Model_Book::find($id))

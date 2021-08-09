@@ -39,4 +39,8 @@ return array(
 	 */
 
 	'hello(/:name)?' => array('welcome/hello', 'name' => 'hello'),
+
+    'books' => ['book/index', 'name' => 'book.index'],
+    'books(/:id)' => ['book/view', 'name' => 'book.view'],
+
 );
