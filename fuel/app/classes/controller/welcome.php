@@ -27,6 +27,8 @@ class Controller_Welcome extends Controller
             'fuga' => 'test2',
         ];
 
+	    // \Fuel\Core\Debug::dump($data);
+
 		return Response::forge(View_Twig::forge('welcome/index', $data));
 	}
 
