@@ -32,4 +32,6 @@ return [
         'charset'        => 'utf8',
         'enable_cache'   => true,
     ],
+
+    'profiling'  => true,
 ];
